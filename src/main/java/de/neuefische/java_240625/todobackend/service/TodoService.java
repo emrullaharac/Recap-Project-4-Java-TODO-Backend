@@ -30,7 +30,7 @@ public class TodoService {
 
     public Todo addTodo(TodoDto todoDto) {
         String id = idService.randomId();
-        Todo newTodo = new Todo(id, todoDto.description(), TodoStatus.TODO);
+        Todo newTodo = new Todo(id, todoDto.description(), todoDto.status());
         return repo.save(newTodo);
     }
 
